@@ -12,6 +12,16 @@ $red : #d66f75;
 $grey : #83a1bb;
 $white : #ffffff;
 
+// *paddings
+
+$card-padding-sm{
+  padding: 1rem;
+}
+
+$card-padding-md{
+  padding: 2rem;
+}
+
 // !MIXIN------------------------------------------
 
 @mixin flex-center{
@@ -30,14 +40,6 @@ $white : #ffffff;
   font-weight: 700;
   font-size: $font-size;
   color: color;
-}
-
-@mixin card-padding-sm{
-  padding: 1rem;
-}
-
-@mixin card-padding-md{
-  padding: 2rem;
 }
 
 @mixin card-img{
