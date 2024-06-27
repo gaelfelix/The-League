@@ -4,4 +4,4 @@
 .DS_Store
 composer.lock
 composer.json
-vendor/
+/vendor
