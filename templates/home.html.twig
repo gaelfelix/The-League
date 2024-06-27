@@ -1,0 +1,23 @@
+{% extends "layout.html.twig" %}
+
+{% block header %}
+{{ parent() }}
+{% endblock %}
+
+{% block main %}
+<main>
+    <section class="home-presentation">
+        <h2>Tout sur la league</h2>
+        <h3>Les players, les teams et l'actu des matchs</h3>
+    </section>
+    <section class="home-teams">
+        <h2>La team à la une</h2>
+        <img src={{spotlightTeam.getLogo().getUrl()}} alt={{spotlightTeam.getLogo().getAlt()}}>
+        <h3>{{spotlightTeam.getName()}}</h3>
+        <p>Les players</p>
+        {%for player in spotlightTeamPlayers%}
+            <img src={{player.portrait().getUrl()}} alt={{player.portrait().getAlt()}}>
+        {%endfor%}
+    </section>
+</main>
+{% endblock %}

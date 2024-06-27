@@ -40,4 +40,18 @@ class GameManager extends AbstractManager{
         }
         return null;
     }
+    
+    public function findLast():Game{
+        $query = $this->db->prepare(
+            "SELECT *
+            FROM games
+            ORDER BY date DESC
+            LIMIT 1"
+        );
+        $query->execute();
+        $game = $query->fetch(PDO::FETCH_ASSOC);
+        $gameClass = new Game($game["name"], $game["date"]);
+        $gameClass->setId($game["id"]);
+        return $gameClass;
+    }
 }

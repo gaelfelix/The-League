@@ -19,7 +19,9 @@ class PlayerManager extends AbstractManager
         {
             $player = new Player($item["nickname"], $item["bio"]);
             $player->setId($item["id"]);
-            $player->setPortrait($item["portrait"]);
+            $mm = new MediaManager();
+            $portrait = $mm->findById($player["portrait"]);
+            $player->setPortrait($portrait);
             $player->setTeam($item["team"]);
             $players[] = $player;
         }
@@ -40,8 +42,12 @@ class PlayerManager extends AbstractManager
         {
             $player = new Player($result["nickname"], $result["bio"]);
             $player->setId($result["id"]);
-            $player->setPortrait($result["portrait"]);
-            $player->setTeam($result["team"]);
+            $mm = new MediaManager();
+            $portrait = $mm->findById($result["portrait"]);
+            $player->setPortrait($portrait);
+            $tm = new TeamManager();
+            $team = $tm->findById($result["team"]);
+            $player->setTeam($team);
 
             return $player;
         }
@@ -51,9 +57,9 @@ class PlayerManager extends AbstractManager
 
     public function findByTeam(int $teamId) : array
     {
-        $query = $this->db->prepare('SELECT player.nickname FROM players 
+        $query = $this->db->prepare('SELECT players.nickname FROM players 
     JOIN teams ON teams.id=players.team 
-    WHERE team.id=:teamId');
+    WHERE teams.id=:teamId');
         $parameters = [
             "teamId" => $teamId
         ];

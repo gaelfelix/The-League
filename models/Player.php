@@ -4,7 +4,7 @@ class Player
 {
 
     private ?int $id = null;
-    private Portrait $portrait;
+    private Media $portrait;
     private Team $team;
 
     public function __construct(private string $nickname, private string $bio)

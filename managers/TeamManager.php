@@ -19,7 +19,7 @@ class TeamManager extends AbstractManager{
         $tag = 0;
         foreach($teams as $team){
             $teamsClass[] = new Team($team["name"], $team["description"]);
-            $teamsClass[$tag]->setID($team["id"]);
+            $teamsClass[$tag]->setId($team["id"]);
             $mm = new MediaManager();
             $logo = $mm->findById($team["logo"]);
             $teamsClass[$tag]->setLogo($logo);
@@ -41,7 +41,7 @@ class TeamManager extends AbstractManager{
         if($query->rowCount() >=1){
             $team = $query->fetch(PDO::FETCH_ASSOC);
             $teamClass = new Team($team["name"], $team["description"]);
-            $team->setId($team["id"]);
+            $teamClass->setId($team["id"]);
             $mm = new MediaManager();
             $logo = $mm->findById($team["logo"]);
             $teamClass->setLogo($logo);
