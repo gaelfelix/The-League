@@ -1,0 +1,49 @@
+.teams {
+
+  // .teams__title
+
+  &__title {
+    @include title($yellow, 3rem);
+  }
+
+  // .teams__cards-container
+
+  &__cards-container {
+    @include flex-center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  // .teams__card
+
+  &__card {
+    flex: 1 1 33.3%;
+  }
+
+  // .teams__card-img
+
+  &__card-img {
+    width: 100%;
+    height: auto;
+
+    & > img{
+      @include card-img;
+    }
+  }
+
+  // .teams__card-h2
+
+  &__card-h2 {
+    @include title($yellow, 2rem);
+  }
+
+  & p{
+    color: $white;
+    text-align: center;
+  }
+
+  & a{
+    @include btn($yellow);
+  }
+}
+
