@@ -1,0 +1,42 @@
+{% extends "layout.html.twig" %}
+
+{% block main %}
+
+<section class="player-player">
+    <h1>{{ $player }}</h1>
+    <p><img url="" alt=""></p>
+</section>
+
+<section class="player-performance">
+    <h2>Ses performances</h2>
+    <table>
+        <tr>
+            <th>TEAM ADVERSE</th>
+            <th>POINTS</th>
+            <th>ASSISTS</th>
+            <th>VICTOIRE ?</th>
+        </tr>
+        {% for performance in performances %}
+            <tr>
+                <td>{{ performance.game }}</td>
+                <td>{{ performance.points }}</td>
+                <td>{{ performance.assists }}</td>
+                <td>{# games -> winner // if winner === teams oui else non #}</td> {# #}
+            </tr>
+        {% endfor %} 
+    </table>
+</section>
+
+<section class="player-team">
+        <h2>Sa team</h2>
+        {% for player in players %}
+            if ({{ players.nickname }} !== $player)
+            {
+                <p><img url="" alt=""></p>
+                <h3></h3>
+                <a>Découvrez {{ players.nickname }}</a>
+            }
+        {% endfor %} 
+</section>
+
+{% endblock %}
