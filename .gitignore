@@ -1,3 +1,5 @@
 /.env
 /assets/db/
 /assets/maquette/
+composer.lock
+vendor/
