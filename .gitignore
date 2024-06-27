@@ -2,6 +2,4 @@
 /assets/db/
 /assets/maquette/
 .DS_Store
-composer.lock
-composer.json
 /vendor

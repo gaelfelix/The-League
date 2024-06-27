@@ -15,7 +15,6 @@ $white : #ffffff;
 // *paddings
 
 $card-padding-sm: 1rem;
-
 $card-padding-md: 2rem;
 
 
@@ -37,10 +36,19 @@ $card-padding-md: 2rem;
   font-weight: 700;
   font-size: $font-size;
   color: color;
+  text-transform: uppercase;
 }
 
 @mixin card-img{
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+@mixin btn($color){
+  border: 2px solid $color;
+  border-radius: 1rem;
+  color: $color;
+  padding: 1rem 1.2rem;
+  text-decoration: none;
 }

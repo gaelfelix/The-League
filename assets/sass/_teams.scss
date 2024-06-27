@@ -1,0 +1,39 @@
+.teams {
+
+  &__title {
+    @include title($yellow, 3rem);
+  }
+
+  &__cards-container {
+    @include flex-center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    flex: 1 1 33.3%;
+  }
+
+  &__card-img {
+    width: 100%;
+    height: auto;
+
+    & > img{
+      @include card-img;
+    }
+  }
+
+  &__card-h2 {
+    @include title($yellow, 2rem);
+  }
+
+  & p{
+    color: $white;
+    text-align: center;
+  }
+
+  & a{
+    @include btn($yellow);
+  }
+}
+
