@@ -1,7 +1,7 @@
-.teams {
+.team {
 
   &__title {
-    @include title($yellow, 3rem);
+    @include title($purple, 3rem);
   }
 
   &__cards-container {
@@ -24,16 +24,11 @@
   }
 
   &__card-h2 {
-    @include title($yellow, 2rem);
-  }
-
-  & p{
-    color: $white;
-    text-align: center;
+    @include title($purple, 2rem);
   }
 
   & a{
-    @include btn($yellow);
+    @include btn($white);
   }
 }
 
