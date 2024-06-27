@@ -1,0 +1,49 @@
+// !VARS---------------------------------------
+
+// *COLORS--------------------------------------
+$darkerGrey : #0b132b;
+$darkGrey : #1c2541;
+$yellow : #d4b52f;
+$green: #509d77;
+$pink : #d97ab5;
+$blue : #45a0ec;
+$purple : #9e87cb;
+$red : #d66f75;
+$grey : #83a1bb;
+$white : #ffffff;
+
+// *paddings
+
+$card-padding-sm{
+  padding: 1rem;
+}
+
+$card-padding-md{
+  padding: 2rem;
+}
+
+// !MIXIN------------------------------------------
+
+@mixin flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin border($color){
+  border: 2px solid $color;
+}
+
+@mixin title($color, $font-size ) {
+  font-family: "Ubuntu", sans-serif;
+  text-align: center;
+  font-weight: 700;
+  font-size: $font-size;
+  color: color;
+}
+
+@mixin card-img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
