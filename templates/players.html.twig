@@ -2,15 +2,18 @@
 <main class="players">
   <h1 class="players__title">LES PLAYERS DE LA LEAGUE</h1>
 
+
   <div class="players__cards-container">
+  {% for player in allPlayers  %}
     <div class="players__card">
       <div class="players__card-img">
-        <img src="" alt="">
+        <img src="{{player.getPortrait().getUrl()}}" alt="">
       </div>
-      <h2 class="players__card-h2"></h2>
-      <p></p>
-      <a href="">DECOUVREZ</a>
+      <h2 class="players__card-h2">{{player.nickname}}</h2>
+      <p>{{player.getTeam().getName()}}</p>
+      <a href="">DECOUVREZ {{player.nickname}}</a>
     </div>
+  {% endfor %}
   </div>
 </main>
 {% endblock %}

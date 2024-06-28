@@ -13,4 +13,16 @@ class PageController extends AbstractController{
         $lastMatch = $gm->findLast();
         $this->render("home.html.twig", ["spotlightTeam"=>$spotlightTeam, "spotlightTeamPlayers"=>$spotlightTeamPlayers, "spotlightPlayer1"=>$spotlightPlayer1, "spotlightPlayer2"=>$spotlightPlayer2, "spotlightPlayer3"=>$spotlightPlayer3, "lastMatch"=>$lastMatch]);
     }
+
+    public function players():void{
+        $pm = new PlayerManager();
+        $mm = new MediaManager();
+        $allPlayers = $pm->findAll();
+        
+
+
+        $this->render("players.html.twig", 
+        ["allPlayers" => $allPlayers
+        ]);
+    }
 }
