@@ -15,9 +15,10 @@
         <img src={{spotlightTeam.getLogo().getUrl()}} alt={{spotlightTeam.getLogo().getAlt()}}>
         <h3>{{spotlightTeam.getName()}}</h3>
         <p>Les players</p>
-        {%for player in spotlightTeamPlayers%}
-            <img src={{player.portrait().getUrl()}} alt={{player.portrait().getAlt()}}>
-        {%endfor%}
+        {% for player in spotlightTeamPlayers %}
+            <img src={{player.getPortrait().getUrl()}}>
+            <p>{{player.getNickname()}}</p>
+        {% endfor %}
     </section>
 </main>
 {% endblock %}

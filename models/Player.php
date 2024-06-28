@@ -31,11 +31,10 @@ class Player
         return $this->portrait;
     }
 
-    public function setPortrait($portrait)
+    public function setPortrait($portrait):void
     {
         $this->portrait = $portrait;
 
-        return $this;
     }
 
     public function getTeam()
