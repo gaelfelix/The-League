@@ -19,7 +19,9 @@ class PlayerManager extends AbstractManager
         {
             $player = new Player($item["nickname"], $item["bio"]);
             $player->setId($item["id"]);
-            $player->setPortrait($item["portrait"]);
+            $mm = new MediaManager();
+            $portrait = $mm->findById($player["portrait"]);
+            $player->setPortrait($portrait);
             $player->setTeam($item["team"]);
             $players[] = $player;
         }
